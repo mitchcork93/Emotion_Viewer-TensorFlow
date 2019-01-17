@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1"/>
+  <title>Live Stream</title>
+  <link rel="stylesheet" type="text/css" href="{{ static_url("css/index.css") }}">
+</head>
+<body>
+
+  <div class="container center" align="center">
+  	<video style="display:none"></video>
+  	<canvas id="canvas" style="display:none"></canvas>
+  	<canvas id="canvas-face" width="640" height="480"></canvas>
+  </div>
+
+  <div width="640px" align="center">
+    <div style="display: inline; padding-left: 5px; padding-right: 5px;"><h2>Analysis: </h2></div><div style="display: inline; padding-left: 5px; padding-right: 5px;"><h1 id="display_emotion">enable first</h1></div>
+  </div>
+
+  <div class="slidercontainer">
+
+    <h3>Track Face</h3>
+    <!-- Rounded switch -->
+    <label class="switch" title="Track Face">
+      <input type="checkbox" id="face" onchange="toggleFace()">
+      <span class="slider round"></span>
+    </label>
+ 
+    <h3>Track Expressions</h3>
+  	<!-- Rounded switch -->
+    <label class="switch" title="Emotion">
+      <input type="checkbox" id="emotion" onchange="toggleEmotion();">
+      <span class="slider round"></span>
+    </label>
+
+  </div>
+
+  <div class="slidercontainer">
+
+    <div class="valueslider">
+      <input type="range" min="0" max="10" value="3" class="poll" id="voteSlider">
+    </div>
+
+    <div class="slidervalue">
+      <h3>Voting Count: <span id="val"></span></h3>
+    </div>
+
+  </div>
+
+
+
+  <div align="center" width="640px">
+    <img src="{{ static_url("images/sigma.jpg") }}" width="25%" height="60px"><img src="{{ static_url("images/cit.png") }}" width="15%" height="60px">
+  </div>
+  
+<script src="{{ static_url("scripts/index.js") }}" type="text/javascript"></script>
+</body>
+</html>
